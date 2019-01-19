@@ -1,0 +1,78 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    
+    <!--my css-->
+    <link rel="stylesheet" href="css/bootstrap/theme.css" >
+    <link rel="stylesheet" href="css/custom.css" >
+
+    <title>Bookmarks!</title>
+  </head>
+  <body>
+    <div id="app">
+      <!--Standard Tool Section-->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top d-none d-sm-block">
+          <a class="navbar-brand" href="#" @click="reset()">{{app_name}}</a>
+          <input v-model="search_query" placeholder="search query" class="align-middle" @input="search()">
+          <div class="btn-group btn-group-sm align-middle" role="toolbar" aria-label="Basic example" >
+            <button type="button" class="btn btn-outline-primary" v-bind:class="{active: s_tags}" @click="s_tags = !s_tags">Tag</button>
+            <button type="button" class="btn btn-outline-primary" v-bind:class="{active: s_name}" @click="s_name = !s_name">Name</button>
+            <button type="button" class="btn btn-outline-primary" v-bind:class="{active: s_desc}" @click="s_desc = !s_desc">Description</button>
+          </div>
+      </nav>
+      <!--Mobile Tool Section-->
+      <div class="jumbotron d-sm-none">
+          <h1 class="display-4" @click="reset()">{{app_name}}</h1>
+          <input v-model="search_query" placeholder="search query" @input="search()"><br>
+          <div class="btn-group btn-group-sm" role="toolbar" aria-label="Basic example" >
+              <button type="button" class="btn btn-outline-primary" v-bind:class="{active: s_tags}" @click="s_tags = !s_tags">Tag</button>
+              <button type="button" class="btn btn-outline-primary" v-bind:class="{active: s_name}" @click="s_name = !s_name">Name</button>
+              <button type="button" class="btn btn-outline-primary" v-bind:class="{active: s_desc}" @click="s_desc = !s_desc">Description</button>
+          </div>
+      </div>
+      <!--Results-->
+      <div id="results">
+        <span class="text-muted">Showing {{count}} out {{bookmarks.length}} bookmarks based on your search query.</span><br>
+        <div class="card d-inline-block" style="width: 18rem; height: 16rem;" v-for="bookmark in results" >
+            <div class="card-body">
+              <span class="d-relative" style="position:absolute; top:0.5rem; right:0.5rem; color:gold;" v-if="search_query!=''">{{bookmark.stars}}&#9733;</span>
+              <h5 class="card-title" style="overflow:hidden; white-space: nowrap; text-overflow: ellipsis;">{{bookmark.name}}</h5>
+              <p class="card-text" style="height: 4rem; overflow-y:auto;">{{bookmark.desc}}</p>
+              <span v-for="tag in bookmark.tags" @click="search_tag(tag)"><span class="badge badge-secondary">{{tag}}</span>&nbsp;</span><br>
+              <hr>
+              <a v-bind:href="bookmark.url" target="_blank" class="btn btn-primary">Go!</a>
+            </div>
+        </div>
+        <br>
+        <div class="text-center text-muted" v-if="count>0">End of results.</div>
+        <div class="text-center text-muted" v-if="count==0">No results.</div>
+      </div>
+      <!--/Results-->
+      <footer class="footer bg-dark fixed-bottom text-center">
+          <div class="container">
+            <span class="">&copy; Mathieu Dombrock 2019</span><br>
+            <span class="">VueJS | Bootstrap | Github</span><br>
+          </div>
+      </footer>
+    </div>
+    <!--/app-->
+    <!--Vue.js-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <!--custom-->
+    <script src="data/data.js"></script>
+    <script src="js/custom.js"></script>
+  </body>
+</html>
+
