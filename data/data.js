@@ -39,7 +39,7 @@ var bookmarks_list = [
   },
   {
     url:"https://github.com/jekyll/jekyll/issues/5862",
-    name:"Jekyll on custom port, host",
+    name:"Jekyll on custom port & host",
     desc:"How to setup Jekyll to run on a custom host or port (not localhost)",
     tags: ["jekyll"]
   },
