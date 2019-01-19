@@ -1,7 +1,7 @@
 var app = new Vue({
     el: '#app',
     data: {
-        app_name: "mMark",
+        app_name: "dMark",
         s_tags: true,
         s_desc: true,
         s_name: true,
