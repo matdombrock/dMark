@@ -1,5 +1,3 @@
-//this could actually be an async function that returns from another file...
-//possible raw data on github
 var bookmarks_list = [
   {
     url:"https://example.com",
