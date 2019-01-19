@@ -11,11 +11,11 @@ Uses:
 * [jQuery](https://jquery.com/)
 
 ## Quick Start
-This software was built to run on GitHub pages. You can use it yourself just by forking this project and enabling GitHub Pages in the project settings. All you need to do is modify the JSON in ```/data/data.js```.
+This software was built to run on GitHub pages. You can use it yourself just by forking this project and enabling GitHub Pages in the project settings. All you need to do is modify the JSON in ```data.js```.
 
 ## Usage
 1) Clone/Fork this repo
-2) Change the data in ```/data/data.js``` to contain your custom bookmark data
+2) Change the data in ```data.js``` to contain your custom bookmark data
 3) ???
 4) Profit (not really)
 
