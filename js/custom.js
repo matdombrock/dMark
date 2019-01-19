@@ -35,7 +35,7 @@ var app = new Vue({
         this.count = 0;
         var self = this;
         this.bookmarks.forEach(function(bookmark){
-          console.log(bookmark.name);
+          //console.log(bookmark.name);
           var stars = 0;
           if(self.s_tags == true){
             if(bookmark.tags.includes(self.search_query)){
@@ -43,7 +43,7 @@ var app = new Vue({
             }
           }
           if(self.s_name == true){
-            console.log("checking name "+bookmark.name+ "against "+self.search_query);
+            //console.log("checking name "+bookmark.name+ "against "+self.search_query);
             if(bookmark.name.includes(self.search_query)){
               stars+=1;
             }
@@ -54,12 +54,12 @@ var app = new Vue({
             }
           }
           if(stars!=0){
-            console.log("Match!");
+            //console.log("Match!");
             self.count += 1;
             bookmark.stars = stars;
             self.results.push(bookmark);
           }else{
-            console.log("No Match!");
+            //console.log("No Match!");
           }
         });
       }
