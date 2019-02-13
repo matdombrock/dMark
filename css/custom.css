@@ -25,3 +25,8 @@
   ::-webkit-scrollbar-thumb:hover {
     background: #555; 
   }
+
+.btn-group button:hover{
+  background: initial;
+  color: initial;
+}
