@@ -3,7 +3,7 @@ A self-hosted bookmark manager designed for developers and built for GitHub page
 
 Requires no server side access, this is 100% front-end javascript.
 
-[Demo](http://mzero.space/dMark/)
+[Demo](http://mzero.space/dMark/) (Hosted on GitHub Pages)
 
 Uses:
 * [Vue.js](https://vuejs.org/)
